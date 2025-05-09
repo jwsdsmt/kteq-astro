@@ -1,11 +1,34 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="KTEQ-FM 91.3 Rapid City">
+  <header class="main-header">
+	<div class="header-background"></div>
+	<div class="header-overlay"></div>
+    <div class="main-logo">
+      <img src="/assets/kteq-logo.png" alt="KTEQ Main Logo" class="main-logo" />
+	</div>
+    <div class="donate-button-wrapper">
+    	<a href="https://give.sdsmt.edu/campaigns/kteq" target="_blank" rel="noopener" class="donate-button">Donate to KTEQ</a>
+    </div></header>
+
+  <section id="calendar">
+    <h2>Show Schedule</h2>
+	<p>KTEQ's programming is largely automated during the summer months when most students are off campus. If you're interested in hosting shows during the summer, or have any programming suggestions feel free to reach out.</p>
+    <iframe
+      src="https://www.google.com/calendar/embed?showTitle=0&amp;mode=WEEK&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=kteq%40mines.sdsmt.edu&amp;color=%23333333&amp;ctz=America%2FDenver"
+      style="border: 0"
+      width="100%"
+      height="1000"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+  </section>
+
+  <section id="station-info">
+    <h2>About KTEQ</h2>
+    <p>KTEQ-FM 91.3 is the non-commercial educational radio station of the South Dakota School of Mines & Technology. Operated by students and community volunteers, KTEQ has been a cultural voice in Rapid City since 1971.</p>
+    <p>You can stream online, tune in locally, or get involved as a DJ, engineer, or volunteer.</p>
+  </section>
+</BaseLayout>

@@ -1,0 +1,42 @@
+---
+import NowPlaying from '../components/NowPlaying.vue';
+const { title = 'KTEQ-FM' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <div class="background-wrapper">
+      <div class="background-overlay"></div>
+    </div>
+
+    <header class="site-header">
+      <div class="header-left">
+        <img src="/assets/kteq-logo.png" alt="KTEQ Logo" class="logo" />
+        <NowPlaying client:only="vue" />
+      </div>
+      <div class="header-right">
+        <!-- Reserved for future use -->
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <p>&copy; {new Date().getFullYear()} KTEQ-FM. All rights reserved.</p>
+      <p>
+        <a href="/faq">FAQ</a> |
+        <a href="/history">History</a> |
+        <a href="https://publicfiles.fcc.gov/fm-profile/KTEQ-FM">FCC Public File</a>
+      </p>
+    </footer>
+  </body>
+</html>
